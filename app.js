@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 
+
+
 require('./config/mongoose-setup');
 
 
@@ -27,8 +29,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
 
+
+// Routes --------------------------------
+
 const index = require('./routes/index');
 app.use('/', index);
+
+// connect the product router file
+const myProductRouter = require('./routes/product-router');
+app.use(myProductRouter);
+
+// -----------------------------------------
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

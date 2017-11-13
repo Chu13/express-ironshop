@@ -1,0 +1,13 @@
+<h2>Product List</h2>
+
+<a href="/products/new"> Add a New Product </a>
+
+<ul>
+<%  listOfProducts.forEach((oneProduct) => { %>
+    <li>
+      <h3> <%= oneProduct.name %> </h3>
+      <p> $<%=oneProduct.price %> </p>
+      <img src="<%=oneProduct.imageUrl %>" />
+    </li>
+<%  })  %>
+</ul>
