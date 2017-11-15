@@ -11,13 +11,22 @@
       <nav>
         <a href="/">home</a>
         <a href="/products"> Products </a>
+        <a href="/products/luxury"> Luxury Products </a>
+        <a href="/products/value"> Best Value Products </a>
       </nav>
     </header>
+
+    <form action="/search" method="get">
+      <label for="search-term-input"> Search Term </label>
+      <input id="search-term-input" type="search"
+          name="userSearch" placeholder="e.g. Star Wars" />
+          <button> Search </button>
+    </form>
 
     <%- body %>
 
     <footer>
-      <p>made with  at ironhack</p>
+      <p>made with 💛💙❤️ at ironhack</p>
     </footer>
   </body>
 </html>

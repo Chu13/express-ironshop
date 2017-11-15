@@ -3,11 +3,24 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const productSchema = new Schema ({
-  name: { type: String },
-  price: { type: Number },
+  name: {
+    type: String,
+    required: true
+  },
+  price: {
+    type: Number,
+    required: true,
+    min: 0
+  },
 
-  imageUrl: { type: String },
-  description: { type: String },
+  imageUrl: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    maxlength: 300
+  },
   dateAdded: { type: Date },
 });
 
